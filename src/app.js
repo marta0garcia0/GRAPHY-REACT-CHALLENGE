@@ -1,6 +1,6 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
-import Annotations from './annotations';
+import Annotations from './containers/annotations';
 
 const App = () => (
   <Annotations/>

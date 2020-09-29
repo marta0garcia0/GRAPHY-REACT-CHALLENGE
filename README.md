@@ -15,3 +15,9 @@ Include these things:
 - what you might have done differently if you were to spend additional time on this solution
 
 Start here 👉 [Coding Challenge Guidelines](coding_challenge.md)
+
+
+functional market
+react hooks for marker tooltip
+
+OOP container for anotations
