@@ -11,14 +11,6 @@ describe('Annotations component', () => {
   test('renders', () => {
     const container = shallow(<Annotations ></Annotations>);
     expect(container.exists()).toBe(true);
-    const event = {
-      stopPropagation: () => {},
-      target: {
-          value: 'text1'
-      },
-      pageX: 100,
-      pageY: 100
-    };
     expect(container).toMatchSnapshot();
   });
 

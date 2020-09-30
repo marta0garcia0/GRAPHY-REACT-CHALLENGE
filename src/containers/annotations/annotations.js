@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Marker from './../../components/marker/marker';
 import Annotation from './../../components/annotation/annotation';
-import { MARKER_BORDER, MARKER_SIZE } from './../../constants';
+import { fitScreenSize } from './../../constants';
 
 const Container = styled.div`
   width: 100vw;
@@ -11,15 +11,6 @@ const Container = styled.div`
   z-index: 0;
 `;
 
-// function to avoid markers out of the container
-const fitScreenSize = (coordinate, dimension) => {
-  if (coordinate < MARKER_SIZE / 2)
-    return MARKER_SIZE / 2;
-  if (coordinate >= dimension - (MARKER_SIZE / 2 + 2 * MARKER_BORDER))
-    return  dimension - (MARKER_SIZE / 2 + 2 * MARKER_BORDER);
-  return coordinate;
-}
- 
 class Annotations extends React.Component {
   constructor(props) {
     super(props);
@@ -80,18 +71,18 @@ class Annotations extends React.Component {
         <div>
           {this.state.annotations.map((annotation, i) =>
             annotation.saved ?
-              <Marker
-                coordinates={annotation.coordinates}
-                note={annotation.note}
-                key={i}
-              ></Marker>
-              :
-              <Annotation
-                key={i}
-                annotationKey={annotation.annotationKey}
-                onSave={this.saveAnnotation}
-                onDiscard={this.discardAnnotation}
-              ></Annotation>
+            <Marker
+              coordinates={annotation.coordinates}
+              note={annotation.note}
+              key={i}
+            ></Marker>
+            :
+            <Annotation
+              key={i}
+              annotationKey={annotation.annotationKey}
+              onSave={this.saveAnnotation}
+              onDiscard={this.discardAnnotation}
+            ></Annotation>
           )}
         </div>
       </Container>
