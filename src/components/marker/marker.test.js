@@ -18,7 +18,6 @@ describe('Marker component', () => {
     const container = shallow(<Marker ></Marker>);
     let tooltip = container.find('Tooltip');
     expect(tooltip).toHaveLength(0);
-    
     container.props().children[0].props.onMouseOver();
     tooltip = container.find('Tooltip');
     expect(tooltip).toHaveLength(1);
