@@ -11,30 +11,29 @@ const calculatePositionX = x => (
 
 const calculatePositionY = y => (
   y < TOOPTIP_HEIGHT ? `${y - (MARKER_SIZE / 2)}px` :
-	// to not exceed the window height
-  y <= window.innerHeight - (MARKER_SIZE + 2 * MARKER_TOOLTIP_MARGIN)
-    ? `${y - MARKER_SIZE / 2}px` : `${y - (TOOPTIP_HEIGHT)}px`
+    // to not exceed the window height
+    y <= window.innerHeight - (MARKER_SIZE + 2 * MARKER_TOOLTIP_MARGIN)
+      ? `${y - MARKER_SIZE / 2}px` : `${y - (TOOPTIP_HEIGHT)}px`
 );
 
 const Container = styled.div`
-  width: ${TOOPTIP_WIDTH}px;
+  max-width: ${TOOPTIP_WIDTH}px;
   height:  ${TOOPTIP_HEIGHT}px;
-  background: purple;
+  background: rgb(68, 180, 189);
   border-radius: 4px;
-  border: 1px solid grey;
   position: absolute;
   margin-left: ${props => props.coordinates ? calculatePositionX(props.coordinates[0]) : `0px`}};
   margin-top: ${props => props.coordinates ? calculatePositionY(props.coordinates[1]) : `0px`};
   z-index: 1;
   color: white;
-  font-size: 20px;
+  font-size: 14px;
   padding: 5px 10px;
 `;
 
-const Tooltip = (props) => {
+const Tooltip = ({coordinates, note}) => {
   return (
-    <Container coordinates={props.coordinates}>
-      tooltip at ({props.coordinates[0]}, {props.coordinates[1]})
+    <Container coordinates={coordinates}>
+      {note}
     </Container>
   );
 }
