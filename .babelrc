@@ -13,6 +13,11 @@
     ],
     "@babel/react"
   ],
+  "env": {
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+  },
   "plugins": [
     "babel-plugin-styled-components",
     "@babel/plugin-proposal-object-rest-spread",
