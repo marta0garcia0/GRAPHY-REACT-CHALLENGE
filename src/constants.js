@@ -1,8 +1,8 @@
 export const ANNOTATION_SIZE = 300;
 export const MARKER_SIZE = 20;
 export const MARKER_BORDER = 1;
-export const TOOPTIP_WIDTH = 100;
-export const TOOPTIP_HEIGHT = 50;
+export const TOOPTIP_WIDTH = 300;
+export const TOOPTIP_HEIGHT = 300;
 export const MARKER_TOOLTIP_MARGIN = 20;
 
 // function to avoid markers out of the container
