@@ -41,12 +41,6 @@ Tool that allows users to add annotations to arbitrary points on the screen with
 7. ***Bonus*** You'll notice that as you add more and more markers, many of the tooltips will start to overlap with other markers making it difficult to select those overlapped markers. Please implement a way to make this interaction more user friendly. *Hint: When interacting with large numbers of data points (or lines), [Voronoi diagrams](https://en.wikipedia.org/wiki/Voronoi_diagram) can be generated to help delimit invisible boundaries around a given point. Check out this multi-line chart [example](https://bl.ocks.org/mbostock/8033015) for a working example.*
 8. Finally, write 1-2 paragraph on what on the project you would focus on next, if you had time.
 
-## Wireframe
-
-This is a wireframe of several of the requirements mentioned above.
-
-![Illustration](https://i.imgur.com/1k84vVF.png)
-
 ## Architecture/technical choices
 - The application is divided in containers and components. The container is annotations.js that is the big component that will content the other ones. The components are divided in annotation.js that corresponds to the note where the user can write, marker.js that is the marker that is displayed in the page, and tooltip.js. This way we can define each component style separately and they can be reused.
 - Marker.js and tooltip.js both have the coordinates reference so they can always fit the screen so they do not overflow.
@@ -54,3 +48,10 @@ This is a wireframe of several of the requirements mentioned above.
 - Also the components sizes can be edited in the file constants.js so the design can be modified with no big effort.
 - I would have added eslint if I would have more time and more testing.
 - For future steps, I would do the annotation component draggable so the user can allocate it anywhere in the case the user desire to hover over a markup behind the annotation component to read another annotation.
+
+## Wireframe
+
+This is a wireframe of several of the requirements mentioned above.
+
+![Illustration](https://i.imgur.com/1k84vVF.png)
+
