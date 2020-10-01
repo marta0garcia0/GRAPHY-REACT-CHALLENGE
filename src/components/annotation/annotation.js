@@ -39,8 +39,8 @@ const ButtonDiscard = styled(MyButton)`
   margin-left: ${window.innerWidth / 2 + ANNOTATION_SIZE / 2 - 170}px;
 `;
 
-const Annotation = ({annotationKey, onSave, onDiscard }) => {
-  const [note, setNote] = useState('');
+const Annotation = ({savedNote, annotationKey, onSave, onDiscard }) => {
+  const [note, setNote] = useState(savedNote);
   return (
     <div>
 			<Container

@@ -27,20 +27,28 @@ class Annotations extends React.Component {
 
     const annotations = this.state.annotations;
     // we don't want to repeat the market at the same position (+-10)
-    const filteredAnnotations = annotations.filter(annotation => {
+    const filteredAnnotation = annotations.find(annotation => {
       const [coordX, coordY] = annotation.coordinates;
-      return !(coordX >= x - 10 && coordX <= x + 10
+      return (coordX >= x - 10 && coordX <= x + 10
         && coordY >= y - 10 && coordY <= y + 10);
     });
-    if (filteredAnnotations.length === annotations.length) {
+    // new annotation
+    if (!filteredAnnotation) {
       annotations.push({coordinates: [x, y], saved: false, annotationKey: `${x}${y}`});
       this.setState({
         annotations
       });
     } else {
-      // if a marker is clicked remove for usability
+      // annotation to edit
       this.setState({
-        annotations: filteredAnnotations
+        annotations: annotations.map(annotation => {
+          const [coordX, coordY] = annotation.coordinates;
+          if (coordX >= x - 10 && coordX <= x + 10
+            && coordY >= y - 10 && coordY <= y + 10) {
+              annotation.saved = false;
+          }
+          return annotation;
+        })
       });
     }
   };
@@ -79,6 +87,7 @@ class Annotations extends React.Component {
             :
             <Annotation
               key={i}
+              savedNote={annotation.note}
               annotationKey={annotation.annotationKey}
               onSave={this.saveAnnotation}
               onDiscard={this.discardAnnotation}
