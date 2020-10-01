@@ -47,7 +47,11 @@ Tool that allows users to add annotations to arbitrary points on the screen with
 - All the components are functional with react hooks, the container allocations.js is OOP class react component type. I wanted to use them both as I don't know which style adjust better to the team one.
 - Also the components sizes can be edited in the file constants.js so the design can be modified with no big effort.
 - I would have added eslint if I would have more time and more testing.
-- For future steps, I would do the annotation component draggable so the user can allocate it anywhere in the case the user desire to hover over a markup behind the annotation component to read another annotation.
+- For future steps:
+1. I would do the annotation component draggable so the user can allocate it anywhere in the case the user desire to hover over a markup behind the annotation component to read another annotation.
+2. I would add a container with the list of last edited annotations.
+3. I would add information about the creation date/last edited.
+4. I would add font styling and also color palette to choose to the annotation component.
 
 ## Wireframe
 
